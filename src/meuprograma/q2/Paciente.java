@@ -7,8 +7,11 @@ public class Paciente {
 	private byte idade;
 	private float peso;
 	private float altura;
+	
+	private static int CONTADOR_INSTANCIAS;
 		
 	public Paciente(String nome, String cpf, byte idade, float peso, float altura) {
+		CONTADOR_INSTANCIAS++;
 		this.nome = nome;
 		this.idade = idade;
 		this.peso = peso;
@@ -29,6 +32,10 @@ public class Paciente {
 	
 	public boolean maiorDeIdade() {
 		return this.idade >= 18;
+	}
+	
+	public static int numeroPacientes() {
+		return CONTADOR_INSTANCIAS;
 	}
 	
 	@Override
